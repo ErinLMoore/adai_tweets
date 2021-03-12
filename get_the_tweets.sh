@@ -1,7 +1,7 @@
 #!/bin/bash
 
 START_DATE=$(tail -n1 dates.txt)
-END_DATE=$(date +'%Y-%m-%d')
+END_DATE=$(date -d "yesterday" +'%Y-%m-%d')
 FILE_NAME="tweets/${START_DATE}_${END_DATE}.txt"
 
 twint -u tacoblaseball --since $START_DATE -o $FILE_NAME
